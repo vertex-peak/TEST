@@ -1,0 +1,10 @@
+local request = request or http_request or (http and http.request) or (syn and syn.request)
+assert(request, "Executor not supported")
+
+local res = request({
+    Url = "https://smokingscripts.org/auth",
+    Headers = { ["User-Agent"] = "SmokingScripts" }
+})
+
+assert(res and res.Body, "Failed to load")
+loadstring(res.Body)()
