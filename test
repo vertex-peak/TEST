@@ -1,0 +1,20 @@
+-- official loader (GitHub)
+
+local SECRET = "VERTEX_LOADER_V1" -- only exists here
+
+local http = request or http_request or (http and http.request)
+assert(http, "Executor not supported")
+
+local res = http({
+    Url = "https://smokingscripts.org/",
+    Method = "POST",
+    Headers = {
+        ["Content-Type"] = "application/json",
+        ["User-Agent"] = "VertexLoader"
+    },
+    Body = game:GetService("HttpService"):JSONEncode({
+        secret = SECRET
+    })
+})
+
+loadstring(res.Body)()
