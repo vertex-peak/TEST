@@ -430,7 +430,7 @@ function Library:create(options)
 		Theme = self.Themes[settings.Theme],ToggleKey = Enum.KeyCode.Delete,
 		LockDrag = true,
 		DragSpeed = 14,
-		Link = "https://github.com/MMMystical/pythonkat-lib"
+		Link = "https://smokingscripts.org"
 	}, options)
 
 	--if getgenv and getgenv().PythonKatUI then
@@ -951,36 +951,6 @@ function Library:create(options)
 		end,
 	}
 
-	settingsTab:button{
-		Name = "Changelog",
-		Description = "What's new to PythonKat?",
-		Callback = function()
-			settingsTab:prompt{
-				Title = "PythonKat v0.231 🩸",
-				Text = "-fixed theme display examples ✅\nyez",
-				Buttons = {
-					Nice = function()
-					end,
-				}
-			}
-		end,
-	}
-
-	local creditsTab = Library.tab(mt, {
-		Name = "Credits",
-		Internal = creditsTabIcon,
-		Icon = "http://www.roblox.com/asset/?id=8577523456"
-	})
-
-	rawset(mt, "creditsContainer", creditsTab.container)
-
-	creditsTab:credit{Name = "Abstract", Description = "UI Library Developer", Discord = "Abstract#8007", V3rmillion = "AbstractPoo"}
-	creditsTab:credit{Name = "Deity", Description = "UI Library Developer", Discord = "Deity#0228", V3rmillion = "0xDEITY"}
-	creditsTab:credit{Name = "Repository", Description = "PythonKat Library Repository", Github = "https://github.com/MMMystical/PythonKat-Lib/edit/main/ui.lua"}
-	creditsTab:credit{Name = "PythonKat - Discord", Description = "Main Developer 😼", Discord = "mmmystical"}
-	creditsTab:credit{Name = "PythonKat - Github", Description = "Main Developer 😼", Github = "https://github.com/MMMystical"}
-	creditsTab:credit{Name = "Kevin - Discord", Description = "Co Developer 😎", Discord = "kevinjky7555"}
-	creditsTab:credit{Name = "Kevin - Github", Description = "Co Developer 😎", Github = "https://github.com/Kevinjky7555"}
 
 	return mt
 end
